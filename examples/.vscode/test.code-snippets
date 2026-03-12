@@ -1,0 +1,26 @@
+{
+  "bun test": {
+    "prefix": "bun-test",
+    "scope": "typescript",
+    "body": [
+      "import { describe, test, expect } from \"bun:test\";",
+      "",
+      "describe(\"$TM_FILENAME_BASE\", () => {",
+      "\ttest(\"$1\", () => {",
+      "\t\t$2",
+      "\t});",
+      "});"
+    ]
+  },
+  "bun test js": {
+    "prefix": "test",
+    "scope": "javascript",
+    "body": [
+      "describe(\"$TM_FILENAME_BASE\", () => {",
+      "\ttest(\"$1\", () => {",
+      "\t\t$2",
+      "\t});",
+      "});"
+    ]
+  }
+}

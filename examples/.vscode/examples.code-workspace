@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": "..",
+    },
+    {
+      "path": "../src",
+    },
+  ],
+  "settings": {
+    "//": "example settings when opening the project via `Open Workspace`",
+    "testFileGenerator.snippetName": "bun test",
+    "testFileGenerator.sourceRoot": "src/main",
+    "testFileGenerator.testRoot": "src/test",
+    "testFileGenerator.testSuffix": ".test",
+    "testFileGenerator.hadrdcoreMode": false,
+    "testFileGenerator.hardcorePatterns": ["**/*.func.ts"],
+  },
+}
