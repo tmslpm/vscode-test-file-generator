@@ -1,0 +1,52 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "../",
+    },
+    {
+      "name": "github",
+      "path": "../.github",
+    },
+    {
+      "path": "../examples",
+    },
+    {
+      "name": "root/src/main",
+      "path": "../src/main",
+    },
+    {
+      "name": "root/src/test",
+      "path": "../src/test",
+    },
+  ],
+  "settings": {
+    "files.exclude": {
+      ".vscode-test": true,
+      "dist/**": true,
+      "node_modules/**": true,
+      "out/**": true,
+      "**/package-lock.json": true,
+      "**/bun-lock.json": true,
+    },
+    "search.exclude": {
+      "out": true,
+      "dist": true,
+      "examples": true,
+    },
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "mylesmurphy.prettify-ts",
+      "better-ts-errors.better-ts-errors",
+      "pkief.material-icon-theme",
+      "gruntfuggly.todo-tree",
+      "bierner.markdown-preview-github-styles",
+      "yzhang.markdown-all-in-one",
+      "connor4312.esbuild-problem-matchers",
+      "ms-vscode.extension-test-runner",
+    ],
+  },
+}
