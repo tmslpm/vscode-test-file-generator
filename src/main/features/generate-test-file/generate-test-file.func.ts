@@ -1,7 +1,6 @@
 import { window, workspace, commands, Uri } from "vscode";
 import { basename, dirname } from "node:path";
 import { getStrOrDefault } from "../../helpers/get-settings.func";
-import { detectSrcRoot } from "../../helpers/detect-src-root.func";
 import { resolveTestFilePath } from "../../helpers/resolve-test-file.func";
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { hasWorkspaceOrShowError } from "../../helpers/assert-has-workspace.func";
@@ -15,30 +14,26 @@ export async function generateTestFile(
     return;
   }
 
-  const root = workspace.workspaceFolders![0].uri.fsPath;
-
   // Resolve config
 
   const cfg = workspace.getConfiguration("testFileGenerator");
   const snippetName = getStrOrDefault(cfg.get("snippetName"), () => "");
-  const testRoot = getStrOrDefault(cfg.get("testRoot"), () => "test");
-  const srcRoot = getStrOrDefault(cfg.get("srcRoot"), () => detectSrcRoot(root));
+  const srcPattern = getStrOrDefault(cfg.get("srcRoot"), () => "src");
+  const testPattern = getStrOrDefault(cfg.get("testRoot"), () => "test");
   const suffix = getStrOrDefault(cfg.get("testSuffix"), () => ".test");
 
   // Resolve path
 
   const testFilePath = resolveTestFilePath(
     sourceUri.fsPath,
-    root,
-    srcRoot,
-    testRoot,
+    srcPattern,
+    testPattern,
     suffix,
   );
 
   if (!testFilePath) {
     window.showErrorMessage(
-      `TestFileGen: "${basename(sourceUri.fsPath)}" is not under ` +
-        `srcRoot "${srcRoot}". workspaceRoot: "${root}"`,
+      `TestFileGen: "${basename(sourceUri.fsPath)}" does not contain pattern "${srcPattern}".`,
     );
     return;
   }

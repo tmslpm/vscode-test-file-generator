@@ -1,9 +1,9 @@
 {
   "//": "example settings when opening the project via `Open Folder`",
   "testFileGenerator.snippetName": "bun test",
-  "testFileGenerator.sourceRoot": "src/main",
+  "testFileGenerator.srcRoot": "src/main",
   "testFileGenerator.testRoot": "src/test",
-  "testFileGenerator.testSuffix": ".test", 
-  "testFileGenerator.hadrdcoreMode": true,
-  "testFileGenerator.hadrdcorePatterns": ["**/*.func.ts"]
+  "testFileGenerator.testSuffix": ".test",
+  "testFileGenerator.hardcoreMode": false,
+  "testFileGenerator.hardcorePatterns": ["**/*.func.ts"]
 }

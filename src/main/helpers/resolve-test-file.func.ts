@@ -1,6 +1,4 @@
-import { join, relative } from "node:path";
-import { stripSourceRoot } from "./strip-src-root.func";
-import { buildTestFileName } from "./build-test-file-name.func";
+import { join, parse, relative } from "node:path";
 
 /**
  * Resolves the absolute test file path from a source file path.
@@ -8,23 +6,21 @@ import { buildTestFileName } from "./build-test-file-name.func";
  */
 export function resolveTestFilePath(
   sourceFilePath: string,
-  workspaceRoot: string,
-  sourceRoot: string,
-  testRoot: string,
-  testSuffix: string,
+  srcPattern: string,
+  testPattern: string,
+  suffix: string,
 ): string | null {
-  const relativeFromSource = stripSourceRoot(
-    relative(workspaceRoot, sourceFilePath),
-    sourceRoot,
-  );
+  const normalized = sourceFilePath.replace(/\\/g, "/");
+  const segment = `/${srcPattern}/`;
+  const lastIdx = normalized.lastIndexOf(segment);
 
-  if (relativeFromSource === null) {
+  if (lastIdx === -1) {
     return null;
   }
 
-  return join(
-    workspaceRoot,
-    testRoot,
-    buildTestFileName(relativeFromSource, testSuffix),
-  );
+  const before = normalized.slice(0, lastIdx);
+  const after = normalized.slice(lastIdx + segment.length);
+
+  const parsed = parse(after);
+  return `${before}/${testPattern}/${join( parsed.dir, parsed.name + suffix + parsed.ext)}`;
 }

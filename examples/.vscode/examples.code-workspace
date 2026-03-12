@@ -6,14 +6,22 @@
     {
       "path": "../src",
     },
+    {
+      "name": "packages/foo/src",
+      "path": "../packages/foo/src",
+    },
+    {
+      "name": "packages/bar/src",
+      "path": "../packages/bar/src",
+    },
   ],
   "settings": {
     "//": "example settings when opening the project via `Open Workspace`",
     "testFileGenerator.snippetName": "bun test",
-    "testFileGenerator.sourceRoot": "src/main",
+    "testFileGenerator.srcRoot": "src/main",
     "testFileGenerator.testRoot": "src/test",
     "testFileGenerator.testSuffix": ".test",
-    "testFileGenerator.hadrdcoreMode": false,
-    "testFileGenerator.hardcorePatterns": ["**/*.func.ts"],
+    "testFileGenerator.hardcoreMode": true,
+    "testFileGenerator.hardcorePatterns": ["**/*.*.ts"],
   },
 }

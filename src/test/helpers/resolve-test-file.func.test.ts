@@ -9,7 +9,6 @@ suite("resolveTestFilePath", () => {
     assert.strictEqual(
       resolveTestFilePath(
         path.join(root, "src/db/repos/user.repos.ts"),
-        root,
         "src",
         "test",
         ".test",
@@ -22,7 +21,6 @@ suite("resolveTestFilePath", () => {
     assert.strictEqual(
       resolveTestFilePath(
         path.join(root, "src/utils/parser.mts"),
-        root,
         "src",
         "test",
         ".test",
@@ -35,7 +33,6 @@ suite("resolveTestFilePath", () => {
     assert.strictEqual(
       resolveTestFilePath(
         path.join(root, "src/app.ts"),
-        root,
         "src",
         "test",
         ".test",
@@ -48,7 +45,6 @@ suite("resolveTestFilePath", () => {
     assert.strictEqual(
       resolveTestFilePath(
         path.join(root, "lib/utils.ts"),
-        root,
         "src",
         "test",
         ".test",
@@ -61,7 +57,6 @@ suite("resolveTestFilePath", () => {
     assert.strictEqual(
       resolveTestFilePath(
         path.join(root, "test/db/user.test.ts"),
-        root,
         "src",
         "test",
         ".test",
@@ -74,7 +69,6 @@ suite("resolveTestFilePath", () => {
     assert.strictEqual(
       resolveTestFilePath(
         path.join(root, "db/user.ts"),
-        root,
         ".",
         "test",
         ".test",
@@ -87,7 +81,6 @@ suite("resolveTestFilePath", () => {
     assert.strictEqual(
       resolveTestFilePath(
         path.join(root, "src/services/auth.service.ts"),
-        root,
         "src",
         "test",
         ".spec",
@@ -100,7 +93,6 @@ suite("resolveTestFilePath", () => {
     assert.strictEqual(
       resolveTestFilePath(
         path.join(root, "src/main/db/user.ts"),
-        root,
         "src/main",
         "src/test",
         ".test",

@@ -1,3 +1,6 @@
+# private note "$name.no-git.$ext"
+*no-git.*
+
 out
 dist
 node_modules

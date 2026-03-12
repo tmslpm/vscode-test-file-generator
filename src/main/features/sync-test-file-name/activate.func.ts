@@ -1,32 +1,30 @@
-import { workspace, Uri } from "vscode";
+import { workspace } from "vscode";
 import type { ExtensionContext } from "vscode";
 import { resolveTestFilePath } from "../../helpers/resolve-test-file.func";
 import { getStrOrDefault } from "../../helpers/get-settings.func";
-import { detectSrcRoot } from "../../helpers/detect-src-root.func";
 import { existsSync, renameSync } from "node:fs";
 import { confirmOnce } from "../../helpers/confirm-once.func";
 import { basename } from "node:path";
+import { hasWorkspaceOrShowError } from "../../helpers/assert-has-workspace.func";
 
 export default function activate(ctx: ExtensionContext) {
   ctx.subscriptions.push(
     workspace.onDidRenameFiles(async (e) => {
-      const root = workspace.workspaceFolders?.[0].uri.fsPath;
-      if (!root) {
+      if (!hasWorkspaceOrShowError()) {
         return;
       }
 
       const cfg = workspace.getConfiguration("testFileGenerator");
-      const srcRoot = getStrOrDefault(cfg.get("srcRoot"), () => detectSrcRoot(root));
-      const testRoot = getStrOrDefault(cfg.get("testRoot"), () => "test");
-      const suffix = getStrOrDefault(cfg.get("testSuffix"), () => ".test");
+      const srcPattern = getStrOrDefault(cfg.get("srcRoot"), () => "src");
+      const testPattern = getStrOrDefault(cfg.get("testRoot"), () => "test");
+      const testSuffix = getStrOrDefault(cfg.get("testSuffix"), () => ".test");
 
       const toRename = e.files.flatMap(({ oldUri, newUri }) => {
         const oldTestPath = resolveTestFilePath(
           oldUri.fsPath,
-          root,
-          srcRoot,
-          testRoot,
-          suffix,
+          srcPattern,
+          testPattern,
+          testSuffix,
         );
 
         if (!oldTestPath || !existsSync(oldTestPath)) {
@@ -35,10 +33,9 @@ export default function activate(ctx: ExtensionContext) {
 
         const newTestPath = resolveTestFilePath(
           newUri.fsPath,
-          root,
-          srcRoot,
-          testRoot,
-          suffix,
+          srcPattern,
+          testPattern,
+          testSuffix,
         );
 
         if (!newTestPath) {
