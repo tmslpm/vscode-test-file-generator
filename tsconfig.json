@@ -1,6 +1,6 @@
 {
   "include": ["src"],
-  "exclude": ["node_modules", ".vscode-test"],
+  "exclude": ["node_modules", "examples", ".vscode-test"],
   "compilerOptions": {
     "module": "Node16",
     "target": "ES2022",
