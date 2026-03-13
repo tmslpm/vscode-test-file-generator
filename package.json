@@ -21,6 +21,10 @@
       {
         "command": "testFileGenerator.generate",
         "title": "Generate Test File"
+      },
+      {
+        "command": "testFileGenerator.goToCounterpart",
+        "title": "Go to Test/Source Counterpart"
       }
     ],
     "menus": {
@@ -29,11 +33,21 @@
           "command": "testFileGenerator.generate",
           "group": "testing",
           "when": "resourceScheme == file && !explorerResourceIsFolder"
+        },
+        {
+          "command": "testFileGenerator.goToCounterpart",
+          "group": "testing",
+          "when": "resourceScheme == file && !explorerResourceIsFolder"
         }
       ],
       "editor/context": [
         {
           "command": "testFileGenerator.generate",
+          "group": "testing",
+          "when": "resourceScheme == file"
+        },
+        {
+          "command": "testFileGenerator.goToCounterpart",
           "group": "testing",
           "when": "resourceScheme == file"
         }
@@ -148,6 +162,13 @@
       {
         "language": "clojure",
         "path": "./src/main/snippets/tfg-clj.code-snippets"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "testFileGenerator.goToCounterpart",
+        "key": "alt+shift+t",
+        "when": "editorFocus"
       }
     ]
   },

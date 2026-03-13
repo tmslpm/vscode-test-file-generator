@@ -4,3 +4,9 @@ describe("log-bar.func.test", () => {
     
   });
 });
+
+describe("log-foo.func.test", () => {
+  it("", () => {
+    
+  });
+});
