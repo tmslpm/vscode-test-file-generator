@@ -67,12 +67,7 @@ suite("resolveTestFilePath", () => {
 
   test("works with sourceRoot '.'", () => {
     assert.strictEqual(
-      resolveTestFilePath(
-        path.join(root, "db/user.ts"),
-        ".",
-        "test",
-        ".test",
-      ),
+      resolveTestFilePath(path.join(root, "db/user.ts"), ".", "test", ".test"),
       path.join(root, "test/db/user.test.ts"),
     );
   });
