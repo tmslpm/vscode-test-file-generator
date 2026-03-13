@@ -1,0 +1,46 @@
+name: Snippet Request
+description: Request a built-in snippet for a language or framework
+labels: ["snippet"]
+body:
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      placeholder: "java"
+    validations:
+      required: true
+
+  - type: input
+    id: extension
+    attributes:
+      label: File extension
+      placeholder: ".java"
+    validations:
+      required: true
+
+  - type: input
+    id: framework
+    attributes:
+      label: Test framework
+      placeholder: "JUnit 5"
+    validations:
+      required: true
+
+  - type: textarea
+    id: snippet
+    attributes:
+      label: Snippet body
+      description: Paste the snippet you want added
+      render: json
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: The language is natively supported by VS Code
+          required: true
+        - label: The snippet key follows the `tfg-{ext}-test` convention
+          required: true

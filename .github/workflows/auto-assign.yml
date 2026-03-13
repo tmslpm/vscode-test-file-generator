@@ -1,0 +1,19 @@
+name: Auto Assign
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: "Auto-assign issue"
+        uses: pozil/auto-assign-issue@c015a6a3f410f12f58255c3d085fd774312f7a2f
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          assignees: tmslpm
+          numOfAssignee: 1
