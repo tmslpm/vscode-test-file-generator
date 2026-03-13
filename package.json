@@ -5,6 +5,10 @@
   "displayName": "test-file-generator",
   "description": "Generates test files mirroring the source directory structure, with automatic snippet injection and optional auto-generation on file creation",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmslpm/test-file-generator"
+  },
   "engines": {
     "vscode": "^1.110.0"
   },
@@ -92,8 +96,32 @@
         "path": "./src/main/snippets/tfg-ts.code-snippets"
       },
       {
+        "language": "typescript",
+        "path": "./src/main/snippets/tfg-tsx.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./src/main/snippets/tfg-mts.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./src/main/snippets/tfg-cts.code-snippets"
+      },
+      {
         "language": "javascript",
         "path": "./src/main/snippets/tfg-js.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./src/main/snippets/tfg-jsx.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./src/main/snippets/tfg-mjs.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./src/main/snippets/tfg-cjs.code-snippets"
       },
       {
         "language": "python",
@@ -173,6 +201,7 @@
     ]
   },
   "scripts": {
+    "vscode:pack": "npx @vscode/vsce package",
     "vscode:prepublish": "npm run package",
     "compile": "npm run check-types && npm run lint && node esbuild.js",
     "watch": "npm-run-all -p watch:*",
@@ -196,6 +225,7 @@
     "@typescript-eslint/parser": "^7.7.1",
     "@vscode/test-cli": "^0.0.9",
     "@vscode/test-electron": "^2.3.9",
+    "@vscode/vsce": "^3.7.1",
     "esbuild": "^0.25.0",
     "eslint": "^8.57.0",
     "npm-run-all": "^4.1.5",

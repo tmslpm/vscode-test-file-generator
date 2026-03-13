@@ -1,0 +1,13 @@
+{
+  "tfg-mts-test": {
+    "prefix": "tfg-mts-test",
+    "body": [
+      "",
+      "describe(\"$TM_FILENAME_BASE\", () => {",
+      "\tit(\"$1\", () => {",
+      "\t\t$2",
+      "\t});",
+      "});"
+    ]
+  }
+}
