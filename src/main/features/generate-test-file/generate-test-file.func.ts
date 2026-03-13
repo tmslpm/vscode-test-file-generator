@@ -1,5 +1,5 @@
-import { window, workspace, commands, Uri } from "vscode";
-import { basename, dirname, extname } from "node:path";
+import { window, workspace, commands, Uri, l10n } from "vscode";
+import { basename, extname } from "node:path";
 import { getSettings } from "../../helpers/get-settings.func";
 import { getSettingsTodoLines } from "../../helpers/get-settings.func";
 import { getSettingsSrcRootPattern } from "../../helpers/get-settings.func";
@@ -31,7 +31,11 @@ export async function generateTestFile(
 
   if (!testFilePath) {
     showError(
-      `TestFileGen: "${basename(sourceUri.fsPath)}" does not contain pattern "${srcPattern}".`
+      l10n.t(
+        "TestFileGen: `{0}` does not contain pattern `{1}`.",
+        basename(sourceUri.fsPath),
+        srcPattern
+      )
     );
     return;
   }
@@ -52,7 +56,10 @@ export async function generateTestFile(
       );
     } catch (error) {
       showError(
-        `Could not create Test file at "${testFilePath}". Check permissions.`,
+        l10n.t(
+          "Could not create Test file at `{0}`. Check permissions.",
+          testFilePath
+        ),
         error
       );
       return;
@@ -70,7 +77,7 @@ export async function generateTestFile(
       .openTextDocument(testFilePath)
       .then((doc) => window.showTextDocument(doc));
   } catch (error) {
-    showError("Test file but could not be opened.", error);
+    showError(l10n.t("Test file but could not be opened."), error);
     return;
   }
 
@@ -82,6 +89,6 @@ export async function generateTestFile(
       name: snippetName
     });
   } catch (error) {
-    showError(`Failed to insert snippet: "${snippetName}"`, error);
+    showError(l10n.t("Failed to insert snippet: '{0}'", snippetName), error);
   }
 }

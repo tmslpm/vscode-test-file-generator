@@ -1,0 +1,11 @@
+{
+  "Rename test file `{0}`?": "重命名测试文件 `{0}`？",
+  "Rename `{0}` test files?": "重命名 `{0}` 个测试文件？",
+  "TestFileGen: Failed to rename `{0}`": "TestFileGen：重命名 `{0}` 失败",
+  "TestFileGen: `{0}` does not contain pattern `{1}`.": "TestFileGen：`{0}` 不包含模式 `{1}`。",
+  "Could not create Test file at `{0}`. Check permissions.": "无法在 `{0}` 创建测试文件，请检查权限。",
+  "Test file but could not be opened.": "测试文件已创建，但无法打开。",
+  "Failed to insert snippet: '{0}'": "插入代码片段失败：'{0}'",
+  "No file selected. Open a file or right-click one in the Explorer.": "未选择文件，请打开一个文件或在资源管理器中右键单击。",
+  "No hardcorePatterns configured.": "未配置 hardcorePatterns。"
+}

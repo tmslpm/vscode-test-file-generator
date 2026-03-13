@@ -1,4 +1,8 @@
-import { ExtensionContext, FileRenameEvent, Uri, workspace } from "vscode";
+import { ExtensionContext } from "vscode";
+import { FileRenameEvent } from "vscode";
+import { l10n } from "vscode";
+import { Uri } from "vscode";
+import { workspace } from "vscode";
 import { resolveTestFilePath } from "../../helpers/resolve-test-file.func";
 import { getSettings } from "../../helpers/get-settings.func";
 import { getSettingsSrcRootPattern } from "../../helpers/get-settings.func";
@@ -51,8 +55,8 @@ export async function syncTestFileNameWithSrcFile(
     ctx,
     "syncRenameDoNotAsk",
     toRename.length === 1
-      ? `Rename test file "${basename(toRename[0].old)}"?`
-      : `Rename ${toRename.length} test files?`
+      ? l10n.t("Rename test file `{0}`?", basename(toRename[0].old))
+      : l10n.t("Rename `{0}` test files?", toRename.length)
   );
 
   if (!accept) {
@@ -64,7 +68,10 @@ export async function syncTestFileNameWithSrcFile(
       workspace.fs
         .rename(Uri.file(old), Uri.file(curr))
         .then(undefined, (err) =>
-          showError(`TestFileGen: Failed to rename "${basename(old)}"`, err)
+          showError(
+            l10n.t("TestFileGen: Failed to rename `{0}`", basename(old)),
+            err
+          )
         )
     )
   );

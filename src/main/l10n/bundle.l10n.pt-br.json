@@ -1,0 +1,11 @@
+{
+  "Rename test file `{0}`?": "Renomear o arquivo de teste `{0}`?",
+  "Rename `{0}` test files?": "Renomear `{0}` arquivos de teste?",
+  "TestFileGen: Failed to rename `{0}`": "TestFileGen: Falha ao renomear `{0}`",
+  "TestFileGen: `{0}` does not contain pattern `{1}`.": "TestFileGen: `{0}` não contém o padrão `{1}`.",
+  "Could not create Test file at `{0}`. Check permissions.": "Não foi possível criar o arquivo de teste em `{0}`. Verifique as permissões.",
+  "Test file but could not be opened.": "Arquivo de teste criado, mas não foi possível abri-lo.",
+  "Failed to insert snippet: '{0}'": "Falha ao inserir o snippet: '{0}'",
+  "No file selected. Open a file or right-click one in the Explorer.": "Nenhum arquivo selecionado. Abra um arquivo ou clique com o botão direito no Explorer.",
+  "No hardcorePatterns configured.": "Nenhum hardcorePatterns configurado."
+}

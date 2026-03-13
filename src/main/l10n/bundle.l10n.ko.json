@@ -1,0 +1,11 @@
+{
+  "Rename test file `{0}`?": "테스트 파일 `{0}`의 이름을 변경하시겠습니까?",
+  "Rename `{0}` test files?": "`{0}`개의 테스트 파일 이름을 변경하시겠습니까?",
+  "TestFileGen: Failed to rename `{0}`": "TestFileGen: `{0}` 이름 변경 실패",
+  "TestFileGen: `{0}` does not contain pattern `{1}`.": "TestFileGen: `{0}`에 패턴 `{1}`이(가) 없습니다.",
+  "Could not create Test file at `{0}`. Check permissions.": "`{0}`에 테스트 파일을 생성할 수 없습니다. 권한을 확인하세요.",
+  "Test file but could not be opened.": "테스트 파일이 생성되었지만 열 수 없습니다.",
+  "Failed to insert snippet: '{0}'": "스니펫 삽입 실패: '{0}'",
+  "No file selected. Open a file or right-click one in the Explorer.": "선택된 파일이 없습니다. 파일을 열거나 탐색기에서 마우스 오른쪽 버튼을 클릭하세요.",
+  "No hardcorePatterns configured.": "hardcorePatterns이 구성되지 않았습니다."
+}

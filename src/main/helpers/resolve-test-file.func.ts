@@ -1,4 +1,4 @@
-import { join, parse, relative } from "node:path";
+import { join, parse } from "node:path";
 
 /**
  * Resolves the absolute test file path from a source file path.

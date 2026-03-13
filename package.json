@@ -15,6 +15,7 @@
     "onStartupFinished"
   ],
   "main": "./dist/extension.js",
+  "l10n": "./src/main/l10n/bundle.l10n.json",
   "contributes": {
     "commands": [
       {
@@ -162,7 +163,8 @@
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "check-types": "tsc --noEmit",
     "lint": "eslint src --ext ts",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "l18": "npx @vscode/l10n-dev export --outDir ./src/main/l10n ./src"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.6",
@@ -179,6 +181,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "@vscode/l10n": "^0.0.18",
     "picomatch": "^4.0.3"
   },
   "overrides": {
