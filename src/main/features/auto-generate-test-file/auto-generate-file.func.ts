@@ -1,30 +1,26 @@
 import { relative } from "node:path";
-import { Uri, window, workspace } from "vscode";
+import { Uri, workspace } from "vscode";
 import { generateTestFile } from "../generate-test-file/generate-test-file.func";
 import picomatch from "picomatch";
-import { hasWorkspaceOrShowError } from "../../helpers/assert-has-workspace.func";
+import { getSettings } from "../../helpers/get-settings.func";
+import { getSettingsWatcherPattern } from "../../helpers/get-settings.func";
+import { showWarn } from "../../helpers/notify.func";
 
 export default async function autoGenerateTestFile(uri: Uri) {
-  if (!hasWorkspaceOrShowError()) {
-    return;
-  }
-
   const workspaceRoot = workspace.workspaceFolders![0].uri.fsPath;
 
-  const patterns = workspace
-    .getConfiguration("testFileGenerator")
-    .get<string[]>("hardcorePatterns", []);
+  const patterns = getSettingsWatcherPattern(getSettings());
 
   if (!patterns.length) {
-    window.showWarningMessage("TestFileGen: No hardcorePatterns configured.");
+    showWarn("No hardcorePatterns configured.");
     return;
   }
 
   if (
     !patterns.some((pattern) =>
       picomatch(pattern)(
-        relative(workspaceRoot, uri.fsPath).replace(/\\/g, "/"),
-      ),
+        relative(workspaceRoot, uri.fsPath).replace(/\\/g, "/")
+      )
     )
   ) {
     return;

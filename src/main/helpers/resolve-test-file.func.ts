@@ -8,7 +8,7 @@ export function resolveTestFilePath(
   sourceFilePath: string,
   srcPattern: string,
   testPattern: string,
-  suffix: string,
+  suffix: string
 ): string | null {
   const normalized = sourceFilePath.replace(/\\/g, "/");
   const segment = `/${srcPattern}/`;
@@ -22,5 +22,5 @@ export function resolveTestFilePath(
   const after = normalized.slice(lastIdx + segment.length);
 
   const parsed = parse(after);
-  return `${before}/${testPattern}/${join( parsed.dir, parsed.name + suffix + parsed.ext)}`;
+  return `${before}/${testPattern}/${join(parsed.dir, parsed.name + suffix + parsed.ext)}`;
 }

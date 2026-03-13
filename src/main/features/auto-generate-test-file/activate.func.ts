@@ -1,13 +1,13 @@
 import { workspace } from "vscode";
 import type { ExtensionContext } from "vscode";
 import autoGenerateTestFile from "./auto-generate-file.func";
+import {
+  getSettings,
+  getSettingsWatcherPattern
+} from "../../helpers/get-settings.func";
 
 export default function activate(ctx: ExtensionContext) {
-  if (
-    workspace
-      .getConfiguration("testFileGenerator")
-      .get<boolean>("hardcoreMode") !== true
-  ) {
+  if (getSettingsWatcherPattern(getSettings()).length === 0) {
     return;
   }
 
@@ -16,6 +16,6 @@ export default function activate(ctx: ExtensionContext) {
       for (const uri of e.files) {
         await autoGenerateTestFile(uri);
       }
-    }),
+    })
   );
 }

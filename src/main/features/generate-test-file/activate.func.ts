@@ -1,6 +1,7 @@
 import { window, commands, Uri } from "vscode";
 import type { ExtensionContext } from "vscode";
 import { generateTestFile } from "./generate-test-file.func";
+import { showError } from "../../helpers/notify.func";
 
 export default function activate(ctx: ExtensionContext) {
   ctx.subscriptions.push(
@@ -8,16 +9,14 @@ export default function activate(ctx: ExtensionContext) {
       "testFileGenerator.generate",
       async (uri?: Uri) => {
         const targetUri = uri ?? window.activeTextEditor?.document.uri;
-
         if (!targetUri) {
-          window.showErrorMessage(
-            "No file selected. Open a file or right-click one in the Explorer.",
+          showError(
+            "No file selected. Open a file or right-click one in the Explorer."
           );
           return;
         }
-
         await generateTestFile(targetUri);
-      },
-    ),
+      }
+    )
   );
 }
