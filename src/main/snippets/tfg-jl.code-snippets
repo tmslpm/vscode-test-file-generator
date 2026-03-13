@@ -1,0 +1,12 @@
+{
+  "tfg-jl-test": {
+    "prefix": "tfg-jl-test",
+    "body": [
+      "using Test",
+      "",
+      "@testset \"$TM_FILENAME_BASE\" begin",
+      "\t@test $1",
+      "end"
+    ]
+  }
+}

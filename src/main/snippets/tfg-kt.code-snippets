@@ -1,0 +1,17 @@
+{
+  "tfg-kt-test": {
+    "prefix": "tfg-kt-test",
+    "body": [
+      "import org.junit.jupiter.api.Test",
+      "import org.junit.jupiter.api.Assertions.*",
+      "",
+      "class ${TM_FILENAME_BASE}Test {",
+      "",
+      "\t@Test",
+      "\tfun `$1`() {",
+      "\t\t$2",
+      "\t}",
+      "}"
+    ]
+  }
+}

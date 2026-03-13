@@ -1,0 +1,14 @@
+{
+  "tfg-go-test": {
+    "prefix": "tfg-go-test",
+    "body": [
+      "package $TM_FILENAME_BASE",
+      "",
+      "import \"testing\"",
+      "",
+      "func Test$1(t *testing.T) {",
+      "\t$2",
+      "}"
+    ]
+  }
+}

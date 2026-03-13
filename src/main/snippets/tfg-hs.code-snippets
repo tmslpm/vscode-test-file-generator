@@ -1,0 +1,17 @@
+{
+  "tfg-hs-test": {
+    "prefix": "tfg-hs-test",
+    "body": [
+      "import Test.HUnit",
+      "",
+      "tests :: Test",
+      "tests = TestList",
+      "\t[ TestLabel \"$1\" $ TestCase $ do",
+      "\t\t$2",
+      "\t]",
+      "",
+      "main :: IO ()",
+      "main = runTestTTAndExit tests"
+    ]
+  }
+}

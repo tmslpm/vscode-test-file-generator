@@ -1,0 +1,16 @@
+{
+  "tfg-rs-test": {
+    "prefix": "tfg-rs-test",
+    "body": [
+      "#[cfg(test)]",
+      "mod tests {",
+      "\tuse super::*;",
+      "",
+      "\t#[test]",
+      "\tfn $1() {",
+      "\t\t$2",
+      "\t}",
+      "}"
+    ]
+  }
+}

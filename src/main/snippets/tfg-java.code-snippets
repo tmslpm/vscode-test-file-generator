@@ -1,0 +1,17 @@
+{
+  "tfg-java-test": {
+    "prefix": "tfg-java-test",
+    "body": [
+      "import org.junit.jupiter.api.Test;",
+      "import static org.junit.jupiter.api.Assertions.*;",
+      "",
+      "class ${TM_FILENAME_BASE}Test {",
+      "",
+      "\t@Test",
+      "\tvoid $1() {",
+      "\t\t$2",
+      "\t}",
+      "}"
+    ]
+  }
+}

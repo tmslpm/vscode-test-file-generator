@@ -1,0 +1,14 @@
+{
+  "tfg-ex-test": {
+    "prefix": "tfg-ex-test",
+    "body": [
+      "defmodule ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Test do",
+      "\tuse ExUnit.Case",
+      "",
+      "\ttest \"$1\" do",
+      "\t\t$2",
+      "\tend",
+      "end"
+    ]
+  }
+}

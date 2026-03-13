@@ -1,0 +1,18 @@
+{
+  "tfg-php-test": {
+    "prefix": "tfg-php-test",
+    "body": [
+      "<?php",
+      "",
+      "use PHPUnit\\Framework\\TestCase;",
+      "",
+      "class ${TM_FILENAME_BASE}Test extends TestCase",
+      "{",
+      "\tpublic function test_$1(): void",
+      "\t{",
+      "\t\t$2",
+      "\t}",
+      "}"
+    ]
+  }
+}

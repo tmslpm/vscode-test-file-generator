@@ -1,0 +1,12 @@
+{
+  "tfg-ps1-test": {
+    "prefix": "tfg-ps1-test",
+    "body": [
+      "Describe \"$TM_FILENAME_BASE\" {",
+      "\tIt \"$1\" {",
+      "\t\t$2",
+      "\t}",
+      "}"
+    ]
+  }
+}

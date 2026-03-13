@@ -1,0 +1,13 @@
+{
+  "tfg-py-test": {
+    "prefix": "tfg-py-test",
+    "body": [
+      "import pytest",
+      "",
+      "",
+      "class Test${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}:",
+      "\tdef test_$1(self):",
+      "\t\t$2"
+    ]
+  }
+}

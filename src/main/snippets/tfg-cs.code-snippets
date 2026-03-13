@@ -1,0 +1,19 @@
+{
+  "tfg-cs-test": {
+    "prefix": "tfg-cs-test",
+    "body": [
+      "using Xunit;",
+      "",
+      "namespace $1;",
+      "",
+      "public class ${TM_FILENAME_BASE}Tests",
+      "{",
+      "\t[Fact]",
+      "\tpublic void $2()",
+      "\t{",
+      "\t\t$3",
+      "\t}",
+      "}"
+    ]
+  },
+}

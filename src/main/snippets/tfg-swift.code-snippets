@@ -1,0 +1,15 @@
+{
+  "tfg-swift-test": {
+    "prefix": "tfg-swift-test",
+    "body": [
+      "import XCTest",
+      "",
+      "final class ${TM_FILENAME_BASE}Tests: XCTestCase {",
+      "",
+      "\tfunc test$1() {",
+      "\t\t$2",
+      "\t}",
+      "}"
+    ]
+  }
+}

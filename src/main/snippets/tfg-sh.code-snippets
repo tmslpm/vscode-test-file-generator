@@ -1,0 +1,12 @@
+{
+  "tfg-sh-test": {
+    "prefix": "tfg-sh-test",
+    "body": [
+      "#!/usr/bin/env bats",
+      "",
+      "@test \"$1\" {",
+      "\t$2",
+      "}"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "tfg-zig-test": {
+    "prefix": "tfg-zig-test",
+    "body": [
+      "const std = @import(\"std\");",
+      "const testing = std.testing;",
+      "",
+      "test \"$1\" {",
+      "\t$2",
+      "}"
+    ]
+  }
+}

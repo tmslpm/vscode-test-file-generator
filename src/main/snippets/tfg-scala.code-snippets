@@ -1,0 +1,16 @@
+{
+  "tfg-scala-test": {
+    "prefix": "tfg-scala-test",
+    "body": [
+      "import org.scalatest.flatspec.AnyFlatSpec",
+      "import org.scalatest.matchers.should.Matchers",
+      "",
+      "class ${TM_FILENAME_BASE}Spec extends AnyFlatSpec with Matchers {",
+      "",
+      "\t\"$TM_FILENAME_BASE\" should \"$1\" in {",
+      "\t\t$2",
+      "\t}",
+      "}"
+    ]
+  }
+}

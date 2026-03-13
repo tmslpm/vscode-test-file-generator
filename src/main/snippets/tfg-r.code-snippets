@@ -1,0 +1,12 @@
+{
+  "tfg-r-test": {
+    "prefix": "tfg-r-test",
+    "body": [
+      "library(testthat)",
+      "",
+      "test_that(\"$1\", {",
+      "\t$2",
+      "})"
+    ]
+  }
+}

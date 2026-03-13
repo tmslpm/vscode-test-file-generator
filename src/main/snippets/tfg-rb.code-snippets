@@ -1,0 +1,14 @@
+{
+  "tfg-rb-test": {
+    "prefix": "tfg-rb-test",
+    "body": [
+      "require \"spec_helper\"",
+      "",
+      "RSpec.describe $TM_FILENAME_BASE do",
+      "\tit \"$1\" do",
+      "\t\t$2",
+      "\tend",
+      "end"
+    ]
+  }
+}

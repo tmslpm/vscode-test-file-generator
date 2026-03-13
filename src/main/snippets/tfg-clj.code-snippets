@@ -1,0 +1,13 @@
+{
+  "tfg-clj-test": {
+    "prefix": "tfg-clj-test",
+    "body": [
+      "(ns $TM_FILENAME_BASE-test",
+      "\t(:require [clojure.test :refer :all]))",
+      "",
+      "(deftest $1",
+      "\t(testing \"$2\"",
+      "\t\t$3))"
+    ]
+  }
+}

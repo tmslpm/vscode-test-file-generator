@@ -1,0 +1,14 @@
+{
+  "tfg-lua-test": {
+    "prefix": "tfg-lua-test",
+    "body": [
+      "local busted = require(\"busted\")",
+      "",
+      "describe(\"$TM_FILENAME_BASE\", function()",
+      "\tit(\"$1\", function()",
+      "\t\t$2",
+      "\tend)",
+      "end)"
+    ]
+  }
+}

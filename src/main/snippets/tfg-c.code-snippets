@@ -1,0 +1,12 @@
+{
+  "tfg-c-test": {
+    "prefix": "tfg-c-test",
+    "body": [
+      "#include <gtest/gtest.h>",
+      "",
+      "TEST($TM_FILENAME_BASE, $1) {",
+      "\t$2",
+      "}"
+    ]
+  }
+}

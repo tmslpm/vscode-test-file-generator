@@ -1,0 +1,16 @@
+{
+  "tfg-dart-test": {
+    "prefix": "tfg-dart-test",
+    "body": [
+      "import 'package:test/test.dart';",
+      "",
+      "void main() {",
+      "\tgroup('$TM_FILENAME_BASE', () {",
+      "\t\ttest('$1', () {",
+      "\t\t\t$2",
+      "\t\t});",
+      "\t});",
+      "}"
+    ]
+  }
+}
