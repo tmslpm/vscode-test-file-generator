@@ -27,56 +27,15 @@ When a source file is renamed, the corresponding test file is
 renamed automatically (with confirmation prompt).
 
 ## Configuration
-
-| Setting                              | Default       | Description                                        |
-| ------------------------------------ | ------------- | -------------------------------------------------- |
-| `testFileGenerator.srcRoot`          | `src/main`    | Root directory of source files                     |
-| `testFileGenerator.testRoot`         | `src/test`    | Root directory of test files                       |
-| `testFileGenerator.testSuffix`       | `.test`       | Suffix before the extension (`user.test.ts`)       |
-| `testFileGenerator.snippetName`      | `""`          | VS Code snippet name to inject after file creation |
-| `testFileGenerator.hardcoreMode`     | `false`       | Enable auto test file generation on file creation  |
-| `testFileGenerator.hardcorePatterns` | `["**/*.ts"]` | Glob patterns to match files for auto-generation   |
-
-## Snippet Setup
-
-Define a snippet in `.vscode/*.code-snippets`:
-
-```json
-{
-  "bun test": {
-    "prefix": "bun-test",
-    "scope": "typescript",
-    "body": [
-      "import { describe, test, expect } from \"bun:test\";",
-      "",
-      "describe(\"$TM_FILENAME_BASE\", () => {",
-      "\ttest(\"$1\", () => {",
-      "\t\t$2",
-      "\t});",
-      "});"
-    ]
-  }
-}
-```
-
-Then configure:
-
-```json
-"testFileGenerator.snippetName": "bun test"
-```
-
-## Example Settings
-
+ 
 ### Workspace Settings
 
 ```json5
 {
-  "testFileGenerator.snippetName": "bun test",
-  "testFileGenerator.sourceRoot": "src",
-  "testFileGenerator.testRoot": "test",
+  "testFileGenerator.sourceRootPattern": "src",
+  "testFileGenerator.testRootPattern": "test",
   "testFileGenerator.testSuffix": ".test",
-  "testFileGenerator.hadrdcoreMode": true,
-  "testFileGenerator.hadrdcorePatterns": ["**/*.ts"],
+  "testFileGenerator.hardcorePatterns": []
 }
 ```
 
@@ -88,12 +47,60 @@ Then configure:
     ...
   ],
   "settings": {
-    "testFileGenerator.snippetName": "bun test",
-    "testFileGenerator.sourceRoot": "src",
-    "testFileGenerator.testRoot": "test",
+    "testFileGenerator.sourceRootPattern": "src/main",
+    "testFileGenerator.testRootPattern": "src/test",
     "testFileGenerator.testSuffix": ".test",
-    "testFileGenerator.hadrdcoreMode": false,
-    "testFileGenerator.hardcorePatterns": ["**/*.ts"],
-  },
+    "testFileGenerator.hardcorePatterns": [
+      "**/*.ts" // /!\ hardcore mode enable (require restart vscode)
+    ]
+  }
 }
 ```
+
+## Add/Overwrite Snippet
+
+Snippets are resolved by VS Code using the standard priority order: 
+```
+workspace → user → extension.
+```
+
+To override a built-in snippet or add one for an unsupported language, 
+create a file in `.vscode/` named `tfg-{ext}.code-snippets` with a 
+snippet keyed `tfg-{ext}-test`.
+
+Example for TypeScript (`.vscode/tfg-ts.code-snippets`):
+
+```json
+{
+  "tfg-ts-test": {
+    "prefix": "tfg-ts-test",
+    "scope": "typescript",
+    "body": [
+      "describe(\"$TM_FILENAME_BASE\", () => {", 
+      /**/ "\ttest(\"$1\", () => {", 
+      /**/ "\t\t$2", 
+      /**/ "\t});", 
+      "});"
+    ]
+  }
+}
+```
+
+The snippet key and prefix must match exactly `tfg-{ext}-test`.
+
+> [!NOTE]
+> **Snippet Resolution**: The extension automatically resolve a 
+> snippet based on the source file extension. The snippet name is 
+> built as `tfg-{ext}-test`, example:
+> | filename | | ext  | | key name     |
+> |----------|-|------|-|--------------|
+> | `foo.ts` |→| `ts` |→| `tfg-ts-test`|
+> | `bar.py` |→| `py` |→| `tfg-py-test`|
+> 
+> VS Code resolves the snippet using its standard priority order:
+> 1. Workspace snippets (`.vscode/*.code-snippets`)
+> 2. User snippets
+> 3. Extension built-in snippets
+>
+> **If no snippet matches, the file is created empty**, no error, no prompt.
+
