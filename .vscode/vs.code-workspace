@@ -21,6 +21,8 @@
     },
   ],
   "settings": {
+    "editor.formatOnSave": true,
+    "prettier.trailingComma": "none",
     "files.exclude": {
       ".vscode-test": true,
       "dist/**": true,
