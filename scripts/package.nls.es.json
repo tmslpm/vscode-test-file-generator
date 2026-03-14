@@ -1,0 +1,12 @@
+{
+  "extension.displayName": "Test File Generator",
+  "extension.description": "Inspirado en la función Generate Test de IntelliJ IDEA, trae el mismo flujo de trabajo a VS Code, agnóstico al lenguaje, configurable y diseñado para funcionar en cualquier estructura de proyecto, incluyendo monorepos.",
+  "command.generate.title": "Generar archivo de prueba",
+  "command.goToCounterpart.title": "Ir al archivo test/fuente correspondiente",
+  "config.title": "Test File Generator",
+  "config.sourceRootPattern.description": "Segmento de ruta que identifica la raíz fuente (ej. 'src' o 'src/main'). Todo lo anterior a este segmento se trata como la base del proyecto, permitiendo soporte de monorepos.",
+  "config.testRootPattern.description": "Segmento de ruta usado como raíz de pruebas. Reemplaza el segmento sourceRootPattern en la ruta resuelta (ej. 'test' o 'src/test').",
+  "config.testSuffix.description": "Sufijo insertado antes de la extensión en el nombre del archivo de prueba generado (ej. '.test' produce 'user.test.ts', '.spec' produce 'user.spec.ts').",
+  "config.hardcorePatterns.description": "Patrones glob que activan la generación automática de archivos de prueba al crear un archivo fuente coincidente. Dejar vacío para desactivar (ej. ['**/*.service.ts', '**/*.func.ts']).",
+  "config.hardcoreTodoLines.description": "Líneas escritas como comentarios en el archivo de prueba auto-generado. Use {name} como marcador para el nombre del archivo de prueba."
+}

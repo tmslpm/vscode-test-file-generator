@@ -1,0 +1,12 @@
+{
+  "extension.displayName": "Test File Generator",
+  "extension.description": "IntelliJ IDEA의 Generate Test 기능에서 영감을 받아 동일한 워크플로우를 VS Code에 제공합니다, 언어 독립적이고, 구성 가능하며, 모노레포를 포함한 모든 프로젝트 구조에서 작동하도록 설계되었습니다.",
+  "command.generate.title": "테스트 파일 생성",
+  "command.goToCounterpart.title": "대응하는 테스트/소스 파일로 이동",
+  "config.title": "Test File Generator",
+  "config.sourceRootPattern.description": "소스 루트를 식별하는 경로 세그먼트 (예: 'src' 또는 'src/main'). 이 세그먼트 앞의 모든 것은 프로젝트 기반으로 처리되어 모노레포 지원이 가능합니다.",
+  "config.testRootPattern.description": "테스트 루트로 사용되는 경로 세그먼트. 해결된 테스트 파일 경로에서 sourceRootPattern 세그먼트를 대체합니다 (예: 'test' 또는 'src/test').",
+  "config.testSuffix.description": "생성된 테스트 파일 이름의 확장자 앞에 삽입되는 접미사 (예: '.test'는 'user.test.ts', '.spec'은 'user.spec.ts' 생성).",
+  "config.hardcorePatterns.description": "일치하는 소스 파일이 생성될 때 자동 테스트 파일 생성을 트리거하는 glob 패턴. 비활성화하려면 비워두세요 (예: ['**/*.service.ts', '**/*.func.ts']).",
+  "config.hardcoreTodoLines.description": "자동 생성된 테스트 파일에 주석으로 작성되는 줄. 테스트 파일 이름의 자리 표시자로 {name}을 사용하세요."
+}

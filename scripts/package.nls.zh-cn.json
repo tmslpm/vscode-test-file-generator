@@ -1,0 +1,12 @@
+{
+  "extension.displayName": "Test File Generator",
+  "extension.description": "受 IntelliJ IDEA 的 Generate Test 功能启发，将相同的工作流程带入 VS Code, 语言无关、可配置，适用于任何项目结构，包括 monorepo。",
+  "command.generate.title": "生成测试文件",
+  "command.goToCounterpart.title": "跳转到对应的测试/源文件",
+  "config.title": "Test File Generator",
+  "config.sourceRootPattern.description": "标识源代码根目录的路径段（例如 'src' 或 'src/main'）。此段之前的所有内容都被视为项目基础，支持 monorepo。",
+  "config.testRootPattern.description": "用作测试根目录的路径段。在解析的测试文件路径中替换 sourceRootPattern 段（例如 'test' 或 'src/test'）。",
+  "config.testSuffix.description": "在生成的测试文件名的扩展名前插入的后缀（例如 '.test' 生成 'user.test.ts'，'.spec' 生成 'user.spec.ts'）。",
+  "config.hardcorePatterns.description": "创建匹配的源文件时触发自动测试文件生成的 glob 模式。留空以禁用（例如 ['**/*.service.ts', '**/*.func.ts']）。",
+  "config.hardcoreTodoLines.description": "在自动生成的测试文件中写入注释的行。使用 {name} 作为测试文件名的占位符。"
+}

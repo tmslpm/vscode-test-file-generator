@@ -1,0 +1,12 @@
+{
+  "extension.displayName": "Test File Generator",
+  "extension.description": "IntelliJ IDEA の Generate Test 機能にインスパイアされ、同じワークフローを VS Code に提供します — 言語非依存、設定可能、モノレポを含むあらゆるプロジェクト構造で動作するよう設計されています。",
+  "command.generate.title": "テストファイルを生成",
+  "command.goToCounterpart.title": "対応するテスト/ソースファイルに移動",
+  "config.title": "Test File Generator",
+  "config.sourceRootPattern.description": "ソースルートを識別するパスセグメント（例: 'src' または 'src/main'）。このセグメントより前の部分はプロジェクトベースとして扱われ、モノレポのサポートが可能になります。",
+  "config.testRootPattern.description": "テストルートとして使用するパスセグメント。解決されたテストファイルパスの sourceRootPattern セグメントを置き換えます（例: 'test' または 'src/test'）。",
+  "config.testSuffix.description": "生成されたテストファイル名の拡張子の前に挿入されるサフィックス（例: '.test' は 'user.test.ts'、'.spec' は 'user.spec.ts' を生成）。",
+  "config.hardcorePatterns.description": "一致するソースファイルが作成されたときにテストファイルの自動生成をトリガーする glob パターン。無効にするには空のままにしてください（例: ['**/*.service.ts', '**/*.func.ts']）。",
+  "config.hardcoreTodoLines.description": "自動生成されたテストファイルにコメントとして書き込まれる行。テストファイル名のプレースホルダーとして {name} を使用してください。"
+}

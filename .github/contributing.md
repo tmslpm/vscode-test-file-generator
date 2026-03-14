@@ -1,6 +1,6 @@
 # Contributing
 
-## Adding Snippets
+## Adding/Improve Snippets
 
 Snippets live in `src/main/snippets/`, one file per language extension.
 
@@ -52,7 +52,11 @@ example
 ```
 #### 3. And open a PR
 
-> [!NOTE]
+> [!TIP]
+> Not comfortable with Git or PRs? Open an issue with the translated JSON attached
+> and we'll integrate it for you.
+
+> [!WARNING]
 > The following languages require a third-party VS Code extension 
 > to be installed before their snippets can be registered: `Elixir`, 
 > `Scala`, `Kotlin`, `Zig`, `OCaml`, `Haskell`. 
@@ -75,7 +79,39 @@ example
 >  Unknown language in `contributes.test-file-generator.language`. Provided value: haskell
 >  ```
 
----
+
+--------------------------------------------------------------------------------
+
+## Adding/Improving Translations
+
+Translations live in two places:
+
+- `src/main/l10n/` : UI messages (runtime strings via `@vscode/l10n`)
+- `scripts/nls/` : extension metadata and settings descriptions (via `package.nls.*.json`)
+
+### Adding a new language
+
+#### 1. UI messages : create `src/main/l10n/bundle.l10n.{locale}.json`
+
+Copy `src/main/l10n/bundle.l10n.json` as a base and translate the values. Keep the keys unchanged.
+
+#### 2. Metadata : create `scripts/nls/package.nls.{locale}.json`
+
+Copy `scripts/nls/package.nls.json` as a base and translate the values. Keep the keys unchanged.
+
+#### 3. Open a PR
+
+### Improving an existing translation
+
+Edit the relevant `bundle.l10n.{locale}.json` or `package.nls.{locale}.json` file directly and open a PR.
+
+Locale codes follow the [BCP 47](https://www.ietf.org/rfc/bcp/bcp47.txt) standard (e.g. `fr`, `de`, `pt-br`, `zh-cn`).
+
+> [!TIP]
+> Not comfortable with Git or PRs? Open an issue with the translated JSON attached
+> and we'll integrate it for you.
+
+--------------------------------------------------------------------------------
 
 ## Fix issues / Improve
 
