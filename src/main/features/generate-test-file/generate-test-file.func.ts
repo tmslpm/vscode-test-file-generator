@@ -41,6 +41,7 @@ export async function generateTestFile(
   }
 
   // Create test file
+
   if (!existsSync(testFilePath)) {
     try {
       await workspace.fs.writeFile(

@@ -29,7 +29,7 @@ export async function goToCounterpartFile(): Promise<void> {
 
   if (isTestFile) {
     // Strip testSuffix from filename before resolving
-    // e.g. /foo/test/db/user.test.ts → /foo/src/db/user.ts
+    // e.g. /foo/test/db/user.test.ts to /foo/src/db/user.ts
     const strippedPath = filePath.replace(
       new RegExp(`${testSuffix.replace(".", "\\.")}(\\.[^.]+)$`),
       "$1"

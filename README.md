@@ -1,8 +1,8 @@
 # Test File Generator
-
-Generates test files mirroring the source directory structure,
-with automatic snippet injection and optional auto-generation
-on file creation.
+ 
+Inspired by IntelliJ IDEA's "Generate Test" feature, this extension 
+brings the same workflow to VS Code, language agnostic, configurable, 
+and designed to work in any project structure including monorepos.
 
 ## Features
 
@@ -15,16 +15,23 @@ Palette → **Generate Test File**.
 - If the test file already exists, opens it without overwriting
 - Injects a configured VS Code snippet after creation
 
-### Auto Generate Test File (Hardcore Mode)
-
-When `hardcoreMode` is enabled, a test file is automatically created
-with a `TODO` comment whenever a new source file matching `hardcorePatterns`
-is created.
-
 ### Sync Test File Rename
 
 When a source file is renamed, the corresponding test file is
 renamed automatically (with confirmation prompt).
+
+### Go to Counterpart File
+
+Inspired by IntelliJ IDEA's `Ctrl+Shift+T`, toggle between a 
+source file and its test file instantly with `Alt+Shift+T` or 
+via the context menu. Works in both directions, source → test 
+and test → source.
+
+### Auto Generate Test File (Hardcore Mode)
+ 
+When `hardcorePatterns` is configured, a test file is automatically 
+created with a `TODO` comment whenever a new source file matching 
+one of the patterns is created. Set to an empty array to disable.
 
 ## Configuration
  
