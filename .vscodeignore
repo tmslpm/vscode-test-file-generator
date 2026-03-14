@@ -15,6 +15,7 @@ tsconfig.json
 CODEOWNERS
 .github/**
 src/**
+scripts/**
 !src/main/snippets/**
 !src/main/l10n/**
  

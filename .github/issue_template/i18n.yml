@@ -1,0 +1,45 @@
+name: Translation Request
+description: Add or improve a translation
+labels: ["i18n"]
+body:
+  - type: input
+    id: locale
+    attributes:
+      label: Locale
+      placeholder: "fr, de, pt-br, zh-cn..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - New language
+        - Improve existing translation
+    validations:
+      required: true
+
+  - type: textarea
+    id: bundle
+    attributes:
+      label: UI messages (bundle.l10n.{locale}.json)
+      description: Paste the translated bundle.l10n.json
+      render: json
+
+  - type: textarea
+    id: nls
+    attributes:
+      label: Metadata (package.nls.{locale}.json)
+      description: Paste the translated package.nls.json
+      render: json
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: All keys from the base English file are present
+          required: true
+        - label: No key has been renamed or removed
+          required: true
