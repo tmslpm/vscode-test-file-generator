@@ -42,7 +42,9 @@ export async function generateTestFile(
 
   // Create test file
 
-  if (!existsSync(testFilePath)) {
+  const exist = existsSync(testFilePath);
+
+  if (!exist) {
     try {
       await workspace.fs.writeFile(
         Uri.file(testFilePath),
@@ -82,14 +84,16 @@ export async function generateTestFile(
     return;
   }
 
-  // Insert vscode snippets
+  if (!exist) {
+    // Insert vscode snippets
 
-  const snippetName = `tfg-${extname(testFilePath).substring(1)}-test`;
-  try {
-    await commands.executeCommand("editor.action.insertSnippet", {
-      name: snippetName
-    });
-  } catch (error) {
-    showError(l10n.t("Failed to insert snippet: '{0}'", snippetName), error);
+    const snippetName = `tfg-${extname(testFilePath).substring(1)}-test`;
+    try {
+      await commands.executeCommand("editor.action.insertSnippet", {
+        name: snippetName
+      });
+    } catch (error) {
+      showError(l10n.t("Failed to insert snippet: '{0}'", snippetName), error);
+    }
   }
 }

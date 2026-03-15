@@ -4,15 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
- 
+
+## [0.0.4] - 2026-03-15
+
+### Fixed
+
+- If the test file already exists, it is simply opened, no snippet is injected.
+
 ## [0.0.3] - 2026-03-15
 
 ### Fixed
+
 - Corrected repository URL in `package.json`
 
 ## [0.0.2] - 2026-03-14
 
 ### Added
+
 - Go to Counterpart File command (`Alt+Shift+T`), toggle between 
   source and test file in both directions, inspired by IntelliJ 
   IDEA's `Ctrl+Shift+T`
@@ -25,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   and `testRootPattern` instead of workspace-relative roots
 
 ### Changed
+
 - `srcRoot` / `testRoot` renamed to `sourceRootPattern` / `testRootPattern` 
   to better reflect path segment matching behavior
 - `snippetName` removed, snippet is now resolved automatically from 
