@@ -5,10 +5,10 @@
   "displayName": "Better Test File Generator",
   "description": "%extension.description%",
   "icon": "icon.png",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tmslpm/test-file-generator"
+    "url": "https://github.com/tmslpm/vscode-test-file-generator"
   },
   "engines": {
     "vscode": "^1.110.0"
