@@ -1,0 +1,12 @@
+{
+  "extension.displayName": "Test File Generator",
+  "extension.description": "Geïnspireerd door de functie ‘Generate Test’ van IntelliJ IDEA, biedt deze tool dezelfde workflow voor VS Code: taalonafhankelijk, aanpasbaar en ontworpen om in elke projectstructuur te werken, inclusief monorepos.",
+  "command.generate.title": "Een testbestand genereren",
+  "command.goToCounterpart.title": "Ga naar het bijbehorende test-/bronbestand",
+  "config.title": "Test File Generator",
+  "config.sourceRootPattern.description": "Een padsegment dat de bronroot aangeeft (bijv. ‘src’ of ‘src/main’). Alles wat aan dit segment voorafgaat, wordt behandeld als de basis van het project, waardoor ondersteuning voor monorepos mogelijk is.",
+  "config.testRootPattern.description": "Een padsegment dat als basis voor de tests wordt gebruikt. Vervangt het segment `sourceRootPattern` in het omgezette pad (bijv. ‘test’ of ‘src/test’).",
+  "config.testSuffix.description": "Achtervoegsel dat voor de extensie wordt geplaatst in de naam van het gegenereerde testbestand (bijv. ‘.test’ levert ‘user.test.ts’ op, ‘.spec’ levert ‘user.spec.ts’ op).",
+  "config.hardcorePatterns.description": "Glob-patronen die ervoor zorgen dat er automatisch een testbestand wordt aangemaakt wanneer een bijbehorend bronbestand wordt aangemaakt. Laat dit veld leeg om deze functie uit te schakelen (bijv. [‘**/*.service.ts’, ‘**/*.func.ts’]).",
+  "config.hardcoreTodoLines.description": "Lijnen die als opmerkingen in het automatisch gegenereerde testbestand zijn opgenomen. Gebruik {name} als plaatshouder voor de naam van het testbestand."
+}

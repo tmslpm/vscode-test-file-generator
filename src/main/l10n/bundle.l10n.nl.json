@@ -1,0 +1,11 @@
+{
+  "Rename test file `{0}`?": "Het testbestand `{0}` hernoemen?",
+  "Rename `{0}` test files?": "De naam van `{0}` testbestanden wijzigen?",
+  "TestFileGen: Failed to rename `{0}`": "TestFileGen: Het hernoemen van `{0}` is mislukt",
+  "TestFileGen: `{0}` does not contain pattern `{1}`.": "TestFileGen: `{0}` bevat het patroon `{1}` niet.",
+  "Could not create Test file at `{0}`. Check permissions.": "Het is niet mogelijk om het testbestand aan te maken in `{0}`. Controleer de machtigingen.",
+  "Test file but could not be opened.": "Het testbestand is aangemaakt, maar kan niet worden geopend.",
+  "Failed to insert snippet: '{0}'": "Het invoegen van het fragment is mislukt: '{0}'",
+  "No file selected. Open a file or right-click one in the Explorer.": "Er is geen bestand geselecteerd. Open een bestand of klik met de rechtermuisknop in Verkenner.",
+  "No hardcorePatterns configured.": "Er zijn geen hardcorePatterns geconfigureerd."
+}
