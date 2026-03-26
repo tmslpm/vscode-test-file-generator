@@ -238,7 +238,7 @@
   },
   "dependencies": {
     "@vscode/l10n": "^0.0.18",
-    "picomatch": "^4.0.3"
+    "picomatch": "^4.0.4"
   },
   "overrides": {
     "serialize-javascript": "^7.0.3"
